@@ -1,26 +1,22 @@
-// TODO: brand name + domain are placeholders until §2 (Brand & Domain) is decided.
-// Update these once a name is picked and the domain is registered — every SEO/AEO
-// builder and layout component reads from here so it only needs to change in one place.
-
 export const siteConfig = {
-  name: "{{BRAND}}",
-  shortName: "{{BRAND}}",
-  domain: "{{DOMAIN}}",
-  url: "https://example.com",
+  name: "TestMySound",
+  shortName: "TestMySound",
+  domain: "testmysound.com",
+  url: "https://testmysound.com",
   tagline:
     "Free browser tools to clean, test and fix your phone, laptop and earbud audio — no app, no sign-up, works in 60 seconds.",
   description:
     "Free, no-download audio tools: eject water and dust from your phone speaker, test left/right sound, check your mic, and more — all in the browser.",
   locale: "en",
   defaultTheme: "system" as const,
-  contactEmail: "hello@{{DOMAIN}}",
+  contactEmail: "hello@testmysound.com",
   social: {
     twitter: "",
     github: "",
     youtube: "",
     instagram: "",
   },
-  legalName: "{{BRAND}}",
+  legalName: "TestMySound",
 } as const;
 
 export type NavLink = {
