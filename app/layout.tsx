@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  verification: {
+    google: "87XJehuT4jnwZoOfahby6Wj62QtV00imUuNor9NM9Pk",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
