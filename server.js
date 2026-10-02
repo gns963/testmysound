@@ -9,8 +9,20 @@ const port = process.env.PORT || 3000;
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
+const CANONICAL_HOST = "testmysound.com";
+
 app.prepare().then(() => {
-  createServer((req, res) => handle(req, res)).listen(port, () => {
+  createServer((req, res) => {
+    const host = (req.headers.host || "").split(":")[0];
+    if (host === `www.${CANONICAL_HOST}`) {
+      res.writeHead(301, {
+        Location: `https://${CANONICAL_HOST}${req.url}`,
+      });
+      res.end();
+      return;
+    }
+    handle(req, res);
+  }).listen(port, () => {
     console.log(`> Ready on port ${port}`);
   });
 });
