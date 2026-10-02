@@ -9,12 +9,13 @@ const port = process.env.PORT || 3000;
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
-const CANONICAL_HOST = "testmysound.com";
+const APEX_HOST = "testmysound.com";
+const CANONICAL_HOST = `www.${APEX_HOST}`;
 
 app.prepare().then(() => {
   createServer((req, res) => {
     const host = (req.headers.host || "").split(":")[0];
-    if (host === `www.${CANONICAL_HOST}`) {
+    if (host === APEX_HOST) {
       res.writeHead(301, {
         Location: `https://${CANONICAL_HOST}${req.url}`,
       });

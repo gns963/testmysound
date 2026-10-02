@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "TestMySound",
   shortName: "TestMySound",
-  domain: "testmysound.com",
-  url: "https://testmysound.com",
+  domain: "www.testmysound.com",
+  url: "https://www.testmysound.com",
   tagline:
     "Free browser tools to clean, test and fix your phone, laptop and earbud audio — no app, no sign-up, works in 60 seconds.",
   description:
