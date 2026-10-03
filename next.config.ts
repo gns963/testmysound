@@ -7,6 +7,19 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  // Hostinger auto-detects this as a Next.js app and deploys its own
+  // generated standalone server.js, ignoring the repo's server.js entirely —
+  // so the apex -> www redirect has to live here, not in a custom server.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "testmysound.com" }],
+        destination: "https://www.testmysound.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
