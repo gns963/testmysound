@@ -11,6 +11,9 @@ import howToTestMic from "@/content/blog/how-to-test-your-microphone";
 import howToTestHeadphones from "@/content/blog/how-to-test-headphones-properly";
 import howLoudIsTooLoud from "@/content/blog/how-loud-is-too-loud-decibel-levels-explained";
 import ipRatingsExplained from "@/content/blog/what-do-ip67-ip68-ratings-mean";
+import howLongToDry from "@/content/blog/how-long-does-it-take-for-a-phone-speaker-to-dry";
+import compressedAir from "@/content/blog/is-compressed-air-safe-for-phone-speakers";
+import mutedDuringCalls from "@/content/blog/phone-speaker-muffled-only-during-calls";
 
 // Registry aggregated from content/blog/*.ts — what the blog index, post
 // pages and RelatedPosts all read from, same pattern as data/tools.ts.
@@ -27,6 +30,9 @@ export const blogPosts: BlogPost[] = [
   howToTestHeadphones,
   howLoudIsTooLoud,
   ipRatingsExplained,
+  howLongToDry,
+  compressedAir,
+  mutedDuringCalls,
 ];
 
 const postsBySlug = new Map(blogPosts.map((post) => [post.slug, post]));
