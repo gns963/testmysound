@@ -6,7 +6,10 @@ import type { DeviceType } from "@/lib/platform";
 
 export type { DeviceType } from "@/lib/platform";
 
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+// Extract just the G-XXXXXXXX token so stray whitespace, quotes or a trailing
+// "." pasted into the host's env var can't silently break collection.
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.match(/G-[A-Z0-9]+/i)?.[0].toUpperCase();
 
 type GtagEventParams = Record<string, string | number | boolean | undefined>;
 
