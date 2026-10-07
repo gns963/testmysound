@@ -17,6 +17,9 @@ import mutedDuringCalls from "@/content/blog/phone-speaker-muffled-only-during-c
 import hearingRange from "@/content/blog/hearing-range-by-age-explained";
 import phoneFrequencies from "@/content/blog/what-frequencies-can-phone-speakers-play";
 import testBass from "@/content/blog/how-to-test-bass-on-speakers-and-headphones";
+import crackling from "@/content/blog/phone-speaker-crackling-at-high-volume";
+import watchWaterLock from "@/content/blog/how-apple-watch-water-lock-works";
+import monoVsStereo from "@/content/blog/mono-vs-stereo-phone-speakers";
 
 // Registry aggregated from content/blog/*.ts — what the blog index, post
 // pages and RelatedPosts all read from, same pattern as data/tools.ts.
@@ -39,6 +42,9 @@ export const blogPosts: BlogPost[] = [
   hearingRange,
   phoneFrequencies,
   testBass,
+  crackling,
+  watchWaterLock,
+  monoVsStereo,
 ];
 
 const postsBySlug = new Map(blogPosts.map((post) => [post.slug, post]));
